@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+
+  "author": "Muhammad Hasnain",
+
+  "name": "Extension Boilerplate",
+  "version": "1.0",
+  "description": "",
+
+  "background": {
+    "persistent": false,
+    "scripts": ["./scripts/background.js"]
+  },
+
+  "browser_action": {
+    "default_title": "Extension Boilerplate",
+    "default_popup": "./html/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/content.js"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
